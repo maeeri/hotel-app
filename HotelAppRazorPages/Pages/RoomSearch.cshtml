@@ -1,0 +1,38 @@
+﻿@page
+@model HotelAppRazorPages.Pages.RoomSearchModel
+@{
+    ViewData["Title"] = "Room Search";
+}
+
+
+<h1>Room Search</h1>
+
+<form method="post" onsubmit="OnSubmit">
+    <label asp-for="@Model.StartDate">Start date</label>
+    <input type="date" name="startDate" asp-for="@Model.StartDate" />
+
+    <label asp-for="@Model.EndDate">End date</label>
+    <input type="date" name="endDate" asp-for="@Model.EndDate" />
+
+    <input type="submit" value="Search" />
+</form>
+
+@if(Model.AvailableRoomTypes.Count > 0)
+{
+    <div>
+        @foreach (var room in Model.AvailableRoomTypes)
+        {
+            <div class="card" style="display: inline-block;">
+                <div>
+                    <label>@room.Title</label>
+                </div>
+                <div>
+                    @room.Price.ToString("0.00")
+                </div>
+                <div>
+                    <a asp-page="./BookRoom" asp-route-id="@room.Id" asp-route-start="@Model.StartDate.ToString("yyyy-MM-dd")" asp-route-end="@Model.EndDate.ToString("yyyy-MM-dd")">Book this room</a>
+                </div>
+            </div>
+        }
+    </div>
+}

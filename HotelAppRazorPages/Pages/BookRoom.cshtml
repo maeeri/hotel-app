@@ -1,0 +1,24 @@
+﻿@page
+@model HotelAppRazorPages.Pages.BookRoomModel
+@{
+}
+
+<h1>@Model.Title</h1>
+
+<div>
+    @Model.Description
+</div>
+<div>
+    
+</div>
+<div class="form-group">
+    <form method="post">
+        <div><label>Start date: </label> <label asp-for="@Model.StartDate">@Model.StartDate.ToShortDateString()</label><input type="hidden" asp-for="@Model.StartDate" /></div>
+        <div><label>End date:</label> <label asp-for="@Model.EndDate">@Model.EndDate.ToShortDateString()</label><input type="hidden" asp-for="@Model.EndDate"/></div>
+        <div><label asp-for="FirstName">First name</label><input asp-for="FirstName" /></div>
+        <div><label asp-for="LastName">Last name</label><input asp-for="LastName" /></div>
+        <div><input type="hidden" asp-for="RoomTypeId" /></div>
+        <div><input type="submit" value="Book" asp-route-start="@Model.StartDate.ToString("yyyy-MM-dd")" asp-route-end="@Model.EndDate.ToString("yyyy-MM-dd")" /></div>
+    </form>
+    <div></div>    
+</div>

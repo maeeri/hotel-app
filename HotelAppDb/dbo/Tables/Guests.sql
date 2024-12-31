@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Guests]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [FirstName] VARCHAR(60) NOT NULL, 
+    [LastName] VARCHAR(60) NOT NULL
+)

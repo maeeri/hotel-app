@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Bookings]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[RoomId] INT NOT NULL FOREIGN KEY REFERENCES Rooms(Id), 
+	[GuestId] INT NOT NULL FOREIGN KEY REFERENCES Guests(Id), 
+	[CheckInDate] DATE NOT NULL, 
+	[CheckOutDate] DATE NOT NULL,
+	[TotalPrice] MONEY NOT NULL, 
+    [CheckedIn] BIT NOT NULL
+)

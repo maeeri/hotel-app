@@ -1,0 +1,7 @@
+﻿/.vs
+*/bin
+*/obj
+/HotelAppWPF/appsettings.json
+/HotelAppWPF/appsettings.Development.json
+/HotelAppRazorPages/appsettings.Development.json
+/HotelAppRazorPages/appsettings.json
